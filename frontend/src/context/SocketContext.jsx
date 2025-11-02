@@ -16,7 +16,7 @@ export const SocketProvider = ({ children }) => {
     useEffect(() => {
         if (userId) {
             // Ensure you have this in your frontend .env file
-            const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:4000';
+            const SOCKET_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
             const newSocket = io(SOCKET_URL, {
                 query: { userId } // This sends the userId to the backend socket server

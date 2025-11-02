@@ -28,7 +28,7 @@ export default function Leaderboard() {
             setError(null);
 
 
-            const BASE_API_URL = 'http://localhost:4000';
+            const BASE_API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
 
             try {

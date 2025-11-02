@@ -12,7 +12,11 @@ import apiRoutes from "./routes/api.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:5173", "https://battleide02.vercel.app"],
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
 app.use(express.json()); // This line is required!
 
 await connectDB();
